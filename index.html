@@ -48,7 +48,7 @@
         Эффективные решения <br />
         для вашего бизнеса
       </h1>
-      <button title="button" class="button primary">Заказать услугу</button>
+      <button title="button" class="button primary" data-modal-open>Заказать услугу</button>
     </section>
 
     <!--ADVANTAGES-->
@@ -95,12 +95,21 @@
         <ul class="services">
           <li class="item">
             <img src="./images/services/img1.jpg" alt="ноутбук сдизайном сайта на экране" width="370" height="294" />
+            <div class="services-overlay">
+              <p class="title">Десктопные приложения</p>
+            </div>
           </li>
           <li class="item">
             <img src="./images/services/img2.jpg" alt="дизайн для мобильный телефонов" width="370" height="294" />
+            <div class="services-overlay">
+              <p class="title">Мобильные приложения</p>
+            </div>
           </li>
           <li class="item">
             <img src="./images/services/img3.jpg" alt="монитор компьютера" width="370" height="294" />
+            <div class="services-overlay">
+              <p class="title">Дизайнерские решения</p>
+            </div>
           </li>
         </ul>
       </div>
@@ -268,6 +277,13 @@
     </div>
   </footer>
 
+  <div class="blakdrop is-hidden" data-modal>
+    <div class="modal">
+      <button class="botton-close" data-modal-close>&#10006;</button>
+    </div>
+  </div>
+
+  <script src="./js/modal.js"></script>
 </body>
 
 </html>

@@ -122,6 +122,21 @@ img {
 .site-nav .link.current {
   color: var(--accent-collor);
 }
+.item-nav {
+  position: relative;
+}
+.link.current::after {
+  content: '';
+  display: inline-block;
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+  background-color: var(--accent-collor);
+
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
 
 
 /* CONTACTS-NAV */
@@ -335,6 +350,28 @@ img {
 /* SERVICES */
 .services {
   display: flex;
+  
+}
+.services .item {
+  position: relative;
+}
+.services-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(47, 48, 58, 0.8);
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.services .title {
+  color: var(--white-collor);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
 }
 
 
@@ -418,6 +455,7 @@ img {
   fill: var(--accent-collor)
 }
 
+
 /*MAIN Portfolio*/
 .portfolio-nav {
   display: flex;
@@ -441,6 +479,36 @@ img {
 }
 .works .item:nth-last-child(-n+3){
   margin-bottom: 0;
+}
+.works-foto {
+  position: relative;
+}
+.works-foto .works-overlay {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%; 
+  background-color: rgba(33, 150, 243, 0.9);
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  
+}
+.overlay-text {
+  color: var(--white-collor); 
+  font-size: 18px;
+  line-height: 1.56;
+  margin: 0;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.works .item:hover .works-overlay,
+.works .item:focus .works-overlay {
+  opacity: 1;
+  pointer-events: auto;
+  
 }
 .works .title {
   margin-top: 0px;
@@ -469,4 +537,40 @@ img {
 }
 .hedder-portfolio {
   border-bottom: 1px solid rgba(236, 236, 236, 1);
+}
+
+
+/* MODAL */
+.blakdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2)
+}
+.blakdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  min-width: 528px;
+  min-height: 581px;
+  background-color: var(--white-collor);
+}
+.botton-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 30px;
+  height: 30px;
+  background: var(--white-collor);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
 }
